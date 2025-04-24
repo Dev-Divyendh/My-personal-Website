@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev Divyendh's Portfolio</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {font-family: "Lato", sans-serif;}
+    body, html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .bgimg-1 {
+      background-image: url('images/my_photo_3.jpg'); 
+      min-height: 100%;
+      background-position:top center; 
+      background-size:cover;
+    }
+    .bgimg-2 {
+      background-image: url('images/my_photo2.jpg');  
+      min-height: 400px;
+    }
+    .bgimg-3 {
+      background-image: url('images/my_photo2.jpg'); 
+      min-height: 400px;
+    }
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
+    html {
+      scroll-padding-top: 80px; /* adjust this based on navbar height */
+    }
+    html {
+  scroll-behavior: smooth;
+}
+
+    #about h4 {
+      font-size: 22px;
+      color: #000;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .skill-badges .badge {
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 12px;
+    }
+  
+    /* ✅ Correct colorful card styles added inside the main style block */
+    .skills .card:nth-child(1) { background-color: #FF6F61; color: white; }
+    .skills .card:nth-child(2) { background-color: #FFB400; color: black; }
+    .skills .card:nth-child(3) { background-color: #00C49A; color: white; }
+    .skills .card:nth-child(4) { background-color: #5B8DEF; color: white; }
+    .skills .card:nth-child(5) { background-color: #A259FF; color: white; }
+    .skills .card:nth-child(6) { background-color: #EF476F; color: white; }
+    .card-title, .card-text { color: inherit !important; }
+    .portfolio_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio_box {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.portfolio_box:hover {
+  transform: scale(1.05);
+}
+
+.portfolio_box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio_layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio_box:hover .portfolio_layer {
+  transform: translateY(0);
+}
+
+.portfolio_layer h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.portfolio_layer p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.portfolio_layer i {
+  font-size: 1.2rem;
+}
+/*dark mode check*/
+/* Dark-only styling for projects */
+.dark-section {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.dark-section h3,
+.dark-section p,
+.dark-section h4 {
+  color: #ffffff;
+}
+
+.dark-section .portfolio_box {
+  background-color: #1e1e1e;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.dark-section .portfolio_layer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #f0f0f0;
+}
+
+.dark-section .portfolio_layer p {
+  color: #ccc;
+}
+
+.dark-section .portfolio_box img {
+  opacity: 0.8;
+}
+
+.dark-section .portfolio_box:hover img {
+  opacity: 1;
+}
+
+  </style>
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Dev Divyendh Dhinakaran</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Education</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#bachelors">Bachelors</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#masters">Masters</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Parallax Section -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Dev <span class="w3-hide-small">Divyendh</span> Dhinakaran</span>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center"><b>ABOUT ME</b></h3>
+  <p class="w3-center"><em>Hi, I'm Dev! A passionate computer science enthusiast, constantly exploring new frontiers in Data Science, Software and web development.</em></p>
+
+  <div class="w3-row">
+    <!-- Left Side - Profile Image -->
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Dev Divyendh Dhinakaran</b></p>
+      <img src="images/my_photo.jpg" class="profile-image" alt="Photo of Me">
+    </div>
+
+    <!-- Right Side - Bio + Education + Resume -->
+    <div class="w3-col m6 w3-padding-large">
+      <p>
+        Currently pursuing a Master's in Computer and Information Sciences at George Mason University, I am passionate about building intelligent, ethical, and scalable systems using technologies at the intersection of Machine Learning, Data Science, and Cloud Computing, I focus on real-world applications in areas like Algorithmic Fairness, Recommender Systems, Edge Deep Learning, and NLP.
+      </p>
+      
+      <p>
+        I have hands-on experience building cloud-native applications and deploying them using Docker, Kubernetes, and AWS. I’ve designed and implemented CI/CD pipelines using Jenkins and GitHub Actions for microservices and data workflows. My academic and project experience also includes working with relational (Oracle, MySQL) and non-relational (MongoDB, Firebase) databases — writing optimized SQL queries, managing data migrations, and performing document-based aggregations.
+      </p>
+      
+      <p>
+        I enjoy blending research-driven development with practical problem solving, especially in areas that promote ethical AI and social impact. Constantly exploring new tools and techniques, I’m driven by a curiosity to innovate responsibly and build systems that are not only technically robust, but also fair, transparent, and human-centered.
+      </p>
+      
+
+    </div>
+    <!-- Embedded Education Section -->
+    <h4 style="margin-top: 30px; color: black;"><b>EDUCATION</b></h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li id="masters"></li>>
+        <strong>George Mason University, Fairfax, VA</strong><br>
+        M.S. in Computer and Information Sciences (2023 – 2025)<br>
+        Coursework: Component-based Software Development, Software Engineering for the World Wide Web, Deep Learning, Mining of massive Datasets, Database Systems, Analysis Algorithm<br>
+        <em>GPA: 3.67/4.0</em>
+      </li><br>
+      <li id="bachelors">
+        <strong>Amrita Vishwa Vidyapeetham, Coimbatore, India</strong><br>
+        B.Tech in Computer Science Engineering (2018 – 2022)<br>
+        Coursework: Machine Learning, Natural Language Processing, Image Processing, Analysis of Algorithms, Softeware Development using OOPS, Time Series Analysis and Forecasting, Semantic Web, Data Science 
+        <em>CGPA: 8.44/10</em>
+      </li><br>
+    </ul>
+
+    <a href="Dev Divyendh Dhinakaran Resume.pdf" class="btn-download" target="_blank">View My Resume</a>
+  </div>
+</div>
+
+
+<!-- Skills Section -->
+<div class="w3-content w3-container w3-padding-64" id="skills">
+  <h3 class="w3-center"><b>MY TECHNICAL SKILLS</b></h3>
+
+  <div class="row g-4 mt-2 skills">
+
+    <!-- Programming Languages -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Programming Languages</h5>
+          <p class="card-text">C, C++, Python, Java, Scala, Haskell, SQL</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web & Databases -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Web & Databases</h5>
+          <p class="card-text">HTML, CSS, JavaScript, XML, MySQL, Oracle DB, Firebase</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data & ML Libraries -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Data & ML Libraries</h5>
+          <p class="card-text">Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Keras, Seaborn, Matplotlib, OpenCV, NLTK, SpaCy</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Frameworks & Development -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Frameworks & Development</h5>
+          <p class="card-text">Spring Boot, Flask, GitHub, Git, Linux, Ubuntu</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Big Data & Distributed Systems -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Big Data & Distributed Systems</h5>
+          <p class="card-text">Apache Spark, Microservices, CI/CD, GitOps</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloud & DevOps -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Cloud & DevOps</h5>
+          <p class="card-text">Docker, Kubernetes, AWS, Terraform, Ansible, Jenkins</p>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+</div> 
+<!-- Parallax Title -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-black w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+
+
+<dive class="dark-section">
+<!-- Section 2: Web / Cloud Projects -->
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center" style="color: #000;">Web & Cloud Projects</h3>
+  <p class="w3-center" style="color: #000;"><em>Projects in Spring Boot, Firebase, Docker, Kubernetes, and full-stack apps</em></p>
+
+  <div class="portfolio_container">
+
+    <!-- Project 1 -->
+    <div class="portfolio_box">
+      <a href="https://github.com/Dev-Divyendh/Containerizing-Microservices-Using-SpringBoot-Docker-Kubernetes-Jenkins.git" target="_blank">
+        <img src="images/microservices.jpg" alt="Microservices">
+        <div class="portfolio_layer">
+          <h4>Spring Boot Microservices</h4>
+          <p>Student survey system with MySQL, Docker, Kubernetes & CI/CD</p>
+          <i class="fa fa-external-link"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="portfolio_box">
+      <a href="https://github.com/Dev-Divyendh/Door-Dining-A-Food-Ordering-App.git" target="_blank">
+        <img src="images/foodapp1.jpg" alt="Food App">
+        <div class="portfolio_layer">
+          <h4>Door-Dining-A-Food-Ordering-App</h4>
+          <p>Firebase-powered full-stack ordering app with restaurant login</p>
+          <i class="fa fa-external-link"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="portfolio_box">
+      <a href="https://github.com/Dev-Divyendh/Oracle-based-Book-Manager-System.git" target="_blank">
+        <img src="images/bookmanager.jpg" alt="Oracle GUI">
+        <div class="portfolio_layer">
+          <h4>Oracle Book Manager</h4>
+          <p>CustomTkinter GUI app to search & update books via OracleDB</p>
+          <i class="fa fa-external-link"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="portfolio_box">
+      <a href="https://github.com/Dev-Divyendh/Scalable-Web-Application-Deployment-Using-Docker-Kubernetes-and-Jenkins.git" target="_blank">
+        <img src="images/cicd.jpg" alt="Portfolio Site">
+        <div class="portfolio_layer">
+          <h4>Scalable Web Application - CI/CD Pipelin</h4>
+          <p>Containerization, Kubernetes Deployment, and CI/CD Pipeline for a Web Application</p>
+          <i class="fa fa-external-link"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 5 -->
+    <!--<div class="portfolio_box">
+      <a href="https://github.com/Dev-Divyendh/P2P-File-Sharing-Network" target="_blank">
+        <img src="images/p2p.jpg" alt="P2P Sharing">
+        <div class="portfolio_layer">
+          <h4>P2P File Sharing</h4>
+          <p>BitTorrent-style file transfer with choke/unchoke in Python</p>
+          <i class="fa fa-external-link"></i>
+        </div>
+      </a>
+    </div>-->
+
+  </div>
+</div>
+
+  <!-- Section 1: AI/ML Projects -->
+  <div class="w3-content w3-container w3-padding-64" id="projects">
+    <h3 class="w3-center" style="color: #000;">AI / ML Projects</h3>
+    <p class="w3-center"style="color: #000;"><em>Selected works in machine learning, fairness, unlearning, and recommender systems</em></p>
+  
+    <div class="portfolio_container">
+  
+      <!-- Project 1 -->
+      <div class="portfolio_box">
+        <a href="https://github.com/Dev-Divyendh/Uncovering-Bias-and-Ensuring-Fairness-A-COMPAS-Algorithm-Analysis" target="_blank">
+          <img src="images/compas.jpg" alt="COMPAS Bias">
+          <div class="portfolio_layer">
+            <h4>COMPAS Bias Mitigation</h4>
+            <p>Fairness-aware classification using resampling and FairLearn</p>
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Project 2 -->
+      <div class="portfolio_box">
+        <a href="https://github.com/Dev-Divyendh/Efficient-Machine-Unlearning-on-CIFAR-10" target="_blank">
+          <img src="images/unlearn.jpg" alt="Unlearning">
+          <div class="portfolio_layer">
+            <h4>Efficient Machine Unlearning</h4>
+            <p>Privacy-preserving deep learning on CIFAR-10 using ResNet-18</p>
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Project 3 -->
+      <div class="portfolio_box">
+        <a href="https://github.com/Dev-Divyendh/Amazon-Product-Recommendation-system.git" target="_blank">
+          <img src="images/amazon.jpg" alt="Recommender">
+          <div class="portfolio_layer">
+            <h4>Amazon Product Recommendation System</h4>
+            <p>Recommend amazon products to customer based on the user written reviews</p>
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Project 4 -->
+      <div class="portfolio_box">
+        <a href="https://github.com/Dev-Divyendh/Predicting-Fake-Job-Postings-using-pyspark-HDFS.git" target="_blank">
+          <img src="images/jobposting.jpg" alt="Job Classifier">
+          <div class="portfolio_layer">
+            <h4>Fake Job Classifier</h4>
+            <p>PySpark pipeline with Random Forest & MLP on imbalanced data</p>
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Project 5 -->
+      <div class="portfolio_box">
+        <a href="https://github.com/Dev-Divyendh/WordCount-and-Word-Pair-Analysis-using-Spark-HDFS.gitk" target="_blank">
+          <img src="images/sotu.jpg" alt="SOTU Analysis">
+          <div class="portfolio_layer">
+            <h4>State of the Union Analysis</h4>
+            <p>Text mining, readability score, lift computation using PySpark</p>
+            <i class="fa fa-external-link"></i>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  </div>
+
+</dive>
+
+  <!-- Research Section -->
+  <div class="w3-content w3-container w3-padding-64" id="research">
+    <h3 class="w3-center"><b>RESEARCH</b></h3>
+    <p class="w3-center"><em>Here is a glimpse into some of my research contributions</em></p>
+  
+    <div class="card shadow-sm p-4 mb-4">
+      <h5><b>Inference at the Edge for Complex Deep Learning Applications with Multiple Models and Accelerators</b></h5>
+      <p><strong>Authors:</strong> Ashwanth K, Dharun Narayanan L K, Dev Divyendh D, Sreehari Krishna S, Vijaya Kumar Sundar, Priyanka Kumar</p>
+      <p>
+        In this paper, we demonstrate the performance benefits of offloading deep learning workloads to specialized hardware accelerators using a Raspberry Pi 4 and Intel Movidius Neural Compute Sticks. 
+        We propose a two-step algorithm that analyzes model complexity using its .xml and .bin files and allocates models to accelerators based on load and complexity. Our findings show a significant FPS improvement and latency reduction using Intel Movidius on edge devices.
+      </p>
+      <a href="https://ieeexplore.ieee.org/document/10306363" target="_blank" class="btn btn-primary mt-2">Read Paper</a>
+    </div>
+  </div>
+
+  
+<!-- Contact Section -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-black w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">GET IN TOUCH / HIRE ME</h3>
+  <p class="w3-center">I'm actively looking for full-time opportunities in Software Development, Data Engineering, or Machine Learning. Feel free to connect with me!</p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m6 w3-container">
+      <img src="images/git.jpg" class="w3-image w3-round" style="width: 100%">
+    </div>
+    <div class="w3-col m6 w3-panel">
+      <form action="https://formspree.io/f/xldbeyro" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+          </div>
+        </div>
+        <textarea class="w3-input w3-border" placeholder="Message" required name="message" rows="5"></textarea>
+        <button class="w3-button w3-black w3-section w3-right" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND
+        </button>
+      </form>
+      
+    </div>
+  </div>
+
+
+
+  <!-- Social Icons -->
+  <div class="w3-xlarge w3-section social-icons">
+    <a href="https://www.linkedin.com/in/dev-divyendh-dhinakaran/" target="_blank" class="fa fa-linkedin w3-hover-opacity"></a>
+    <a href="https://github.com/Dev-Divyendh" target="_blank" class="fa fa-github w3-hover-opacity"></a>
+    <a href="https://www.instagram.com/dev_divyendh" target="_blank" class="fa fa-instagram w3-hover-opacity"></a>
+   
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="footer-text">
+    Dev Divyendh Dhinakaran<br>
+    George Mason University, Fairfax, VA<br>
+    Phone: (571) 244-3883<br>
+    Email: devdivyendh0301@gmail.com
+  </p>
+</footer>
+
+
+</body>
+</html>
